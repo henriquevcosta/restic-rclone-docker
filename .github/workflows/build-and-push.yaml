@@ -24,7 +24,7 @@ on:
         type: string
 
 env:
-  TARGET_PLATFORMS: linux/386,linux/amd64,linux/arm,linux/arm64
+  TARGET_PLATFORMS: linux/amd64,linux/arm64
 
 jobs:
   build-and-push:
@@ -77,8 +77,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            tofran/restic-rclone
-            ghcr.io/tofran/restic-rclone
+            henriquevcosta/restic-rclone
+            ghcr.io/henriquevcosta/restic-rclone
           tags: |
             type=raw,value=${{ matrix.restic_version }}_${{ matrix.rclone_version }}
           flavor: |
